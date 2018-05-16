@@ -185,6 +185,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         
         // Edit the sort key as appropriate.
         let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
+        //let sortDescriptor2 = NSSortDescriptor(key: "isCompleted", ascending: true)
         
         fetchRequest.sortDescriptors = [sortDescriptor]
         

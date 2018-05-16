@@ -44,13 +44,31 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         // alertController
         let alertController = UIAlertController(title: "New ToDo", message: "Enter a title", preferredStyle: .alert)
         
-        self.present(alertController, animated: true)
+        alertController.addTextField(configurationHandler: { (titleField) in
+            titleField.placeholder = "Enter title"
+            titleField.keyboardType = .default
+        })
+        
+        alertController.addTextField(configurationHandler: { (descriptionField) in
+            descriptionField.placeholder = "Enter description"
+            descriptionField.keyboardType = .default
+        })
+        
+        alertController.addTextField(configurationHandler: { (priorityField) in
+            priorityField.placeholder = "Enter a priority number"
+            priorityField.keyboardType = .numberPad
+        })
+        
         alertController.addAction(UIAlertAction(title: "Save", style: .default, handler: { action in
             let context = self.fetchedResultsController.managedObjectContext
             let newToDo = ToDo(context: context)
+            let titleField = alertController.textFields![0] as UITextField
+            let descriptionField = alertController.textFields![1] as UITextField
+            let priorityField = alertController.textFields![2] as UITextField
             
-            newToDo.title = "ToDo title"
-            newToDo.todoDescription = "description"
+            newToDo.title = titleField.text
+            newToDo.todoDescription = descriptionField.text
+            newToDo.priorityNumber = Int16(priorityField.text!) ?? 0
             
             // Save the context.
             do {
@@ -65,6 +83,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
+        self.present(alertController, animated: true)
+
     }
 
     // MARK: - Segues

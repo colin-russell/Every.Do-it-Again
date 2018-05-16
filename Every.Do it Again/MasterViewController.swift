@@ -37,7 +37,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
-        reloadIsCompleted()
+        saveCompletionState()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,7 +45,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         // Dispose of any resources that can be recreated.
     }
     
-    func reloadIsCompleted() {
+    func saveCompletionState() {
         let context = self.fetchedResultsController.managedObjectContext
         // Save the context.
         do {
@@ -56,6 +56,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             let nserror = error as NSError
             fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
+        self.tableView.reloadData()
     }
     @objc
     func insertNewObject(_ sender: Any) {
@@ -103,7 +104,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         self.present(alertController, animated: true)
-
     }
 
     // MARK: - Segues
@@ -164,6 +164,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     func configureCell(_ cell: UITableViewCell, withEvent toDo: ToDo) {
         cell.textLabel!.text = toDo.title
         cell.detailTextLabel?.text = "\(toDo.priorityNumber) \(toDo.todoDescription ?? "null")"
+        if toDo.isCompleted == true {
+            cell.backgroundColor = UIColor.green
+        } else {
+            cell.backgroundColor = UIColor.white
+        }
     }
 
     // MARK: - Fetched results controller

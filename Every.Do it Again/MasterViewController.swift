@@ -40,21 +40,31 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     @objc
     func insertNewObject(_ sender: Any) {
-        let context = self.fetchedResultsController.managedObjectContext
-        let newToDo = ToDo(context: context)
-             
-        // If appropriate, configure the new managed object.
-        //newToDo.timestamp = Date()
-
-        // Save the context.
-        do {
-            try context.save()
-        } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-        }
+        
+        // alertController
+        let alertController = UIAlertController(title: "New ToDo", message: "Enter a title", preferredStyle: .alert)
+        
+        self.present(alertController, animated: true)
+        alertController.addAction(UIAlertAction(title: "Save", style: .default, handler: { action in
+            let context = self.fetchedResultsController.managedObjectContext
+            let newToDo = ToDo(context: context)
+            
+            newToDo.title = "ToDo title"
+            newToDo.todoDescription = "description"
+            
+            // Save the context.
+            do {
+                try context.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
     }
 
     // MARK: - Segues
@@ -114,7 +124,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     func configureCell(_ cell: UITableViewCell, withEvent toDo: ToDo) {
         cell.textLabel!.text = toDo.title
-        cell.detailTextLabel!.text = "\(toDo.priorityNumber) \(toDo.todoDescription ?? "null")"
+        cell.detailTextLabel?.text = "\(toDo.priorityNumber) \(toDo.todoDescription ?? "null")"
     }
 
     // MARK: - Fetched results controller

@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		3BABC34E20AC8C9E008D8C04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BABC34D20AC8C9E008D8C04 /* AppDelegate.swift */; };
-		3BABC35120AC8C9E008D8C04 /* Every_Do_it_Again.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BABC34F20AC8C9E008D8C04 /* Every_Do_it_Again.xcdatamodeld */; };
 		3BABC35320AC8C9E008D8C04 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BABC35220AC8C9E008D8C04 /* MasterViewController.swift */; };
 		3BABC35520AC8C9E008D8C04 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BABC35420AC8C9E008D8C04 /* DetailViewController.swift */; };
 		3BABC35820AC8C9E008D8C04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BABC35620AC8C9E008D8C04 /* Main.storyboard */; };
 		3BABC35A20AC8C9F008D8C04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BABC35920AC8C9F008D8C04 /* Assets.xcassets */; };
 		3BABC35D20AC8C9F008D8C04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BABC35B20AC8C9F008D8C04 /* LaunchScreen.storyboard */; };
+		3BABC36620AC8E5E008D8C04 /* Every_Do_it_Again.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3BABC36420AC8E5E008D8C04 /* Every_Do_it_Again.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3BABC34A20AC8C9E008D8C04 /* Every.Do it Again.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Every.Do it Again.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BABC34D20AC8C9E008D8C04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3BABC35020AC8C9E008D8C04 /* Every_Do_it_Again.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Every_Do_it_Again.xcdatamodel; sourceTree = "<group>"; };
 		3BABC35220AC8C9E008D8C04 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		3BABC35420AC8C9E008D8C04 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3BABC35720AC8C9E008D8C04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BABC35920AC8C9F008D8C04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BABC35C20AC8C9F008D8C04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BABC35E20AC8C9F008D8C04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BABC36520AC8E5E008D8C04 /* Every_Do_it_Again.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Every_Do_it_Again.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 				3BABC35920AC8C9F008D8C04 /* Assets.xcassets */,
 				3BABC35B20AC8C9F008D8C04 /* LaunchScreen.storyboard */,
 				3BABC35E20AC8C9F008D8C04 /* Info.plist */,
-				3BABC34F20AC8C9E008D8C04 /* Every_Do_it_Again.xcdatamodeld */,
+				3BABC36420AC8E5E008D8C04 /* Every_Do_it_Again.xcdatamodeld */,
 			);
 			path = "Every.Do it Again";
 			sourceTree = "<group>";
@@ -141,9 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BABC35120AC8C9E008D8C04 /* Every_Do_it_Again.xcdatamodeld in Sources */,
 				3BABC34E20AC8C9E008D8C04 /* AppDelegate.swift in Sources */,
 				3BABC35320AC8C9E008D8C04 /* MasterViewController.swift in Sources */,
+				3BABC36620AC8E5E008D8C04 /* Every_Do_it_Again.xcdatamodeld in Sources */,
 				3BABC35520AC8C9E008D8C04 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,12 +344,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		3BABC34F20AC8C9E008D8C04 /* Every_Do_it_Again.xcdatamodeld */ = {
+		3BABC36420AC8E5E008D8C04 /* Every_Do_it_Again.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				3BABC35020AC8C9E008D8C04 /* Every_Do_it_Again.xcdatamodel */,
+				3BABC36520AC8E5E008D8C04 /* Every_Do_it_Again.xcdatamodel */,
 			);
-			currentVersion = 3BABC35020AC8C9E008D8C04 /* Every_Do_it_Again.xcdatamodel */;
+			currentVersion = 3BABC36520AC8E5E008D8C04 /* Every_Do_it_Again.xcdatamodel */;
 			path = Every_Do_it_Again.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

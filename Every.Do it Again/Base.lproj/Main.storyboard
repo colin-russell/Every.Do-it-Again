@@ -53,15 +53,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aWk-in-urG">
+                                <rect key="frame" x="248" y="429" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moe-Bg-VK6">
+                                <rect key="frame" x="157" y="434" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xaW-bQ-8Ag" firstAttribute="centerX" secondItem="VUw-jc-0yf" secondAttribute="centerX" id="Aby-T3-mva"/>
+                            <constraint firstItem="moe-Bg-VK6" firstAttribute="centerY" secondItem="aWk-in-urG" secondAttribute="centerY" id="Afs-hO-g2D"/>
                             <constraint firstItem="xaW-bQ-8Ag" firstAttribute="top" secondItem="obU-QX-F73" secondAttribute="bottom" constant="85" id="BRQ-86-OsQ"/>
+                            <constraint firstItem="moe-Bg-VK6" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" constant="157" id="Bd2-6e-OXF"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="top" secondItem="xaW-bQ-8Ag" secondAttribute="bottom" constant="89.5" id="DXN-xR-WNs"/>
                             <constraint firstItem="obU-QX-F73" firstAttribute="centerX" secondItem="VUw-jc-0yf" secondAttribute="centerX" id="I07-eU-A4o"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="jWN-iV-94e"/>
+                            <constraint firstItem="moe-Bg-VK6" firstAttribute="top" secondItem="0XM-y9-sOw" secondAttribute="bottom" constant="90" id="qAM-tP-esO"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="aWk-in-urG" secondAttribute="trailing" constant="78" id="sZc-8T-MeY"/>
                             <constraint firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" symbolic="YES" id="tHV-ZD-HQj"/>
                             <constraint firstItem="obU-QX-F73" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" constant="43" id="wyd-Ut-1hU"/>
                         </constraints>
@@ -71,13 +84,14 @@
                     <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="0XM-y9-sOw" id="deQ-Na-JPF"/>
+                        <outlet property="isCompletedSwitch" destination="aWk-in-urG" id="pcg-yC-osz"/>
                         <outlet property="priorityLabel" destination="xaW-bQ-8Ag" id="zVK-DS-OZt"/>
                         <outlet property="titleLabel" destination="obU-QX-F73" id="CFs-yV-wJj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="129"/>
+            <point key="canvasLocation" x="708" y="128.18590704647679"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">

@@ -26,6 +26,11 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        
+        // User Defaults
+        UserDefaults.standard.set("Title", forKey: "title")
+        UserDefaults.standard.set("Description", forKey: "description")
+        UserDefaults.standard.set("Priority Number", forKey: "priority")
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -45,17 +50,17 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         let alertController = UIAlertController(title: "New ToDo", message: "Enter a title", preferredStyle: .alert)
         
         alertController.addTextField(configurationHandler: { (titleField) in
-            titleField.placeholder = "Enter title"
+            titleField.placeholder = UserDefaults.standard.value(forKey: "title") as? String
             titleField.keyboardType = .default
         })
         
         alertController.addTextField(configurationHandler: { (descriptionField) in
-            descriptionField.placeholder = "Enter description"
+            descriptionField.placeholder = UserDefaults.standard.value(forKey: "description") as? String
             descriptionField.keyboardType = .default
         })
         
         alertController.addTextField(configurationHandler: { (priorityField) in
-            priorityField.placeholder = "Enter a priority number"
+            priorityField.placeholder = UserDefaults.standard.value(forKey: "priority") as? String
             priorityField.keyboardType = .numberPad
         })
         

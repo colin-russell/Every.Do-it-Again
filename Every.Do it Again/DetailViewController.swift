@@ -10,16 +10,24 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var priorityLabel: UILabel!
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
 
     func configureView() {
         // Update the user interface for the detail item.
-//        if let detail = detailItem {
-//            if let label = detailDescriptionLabel {
-//                label.text = detail.timestamp!.description
-//            }
-//        }
+        if let detail = detailItem {
+            if let label = titleLabel {
+                label.text = "Title: \(detail.title ?? "")"
+            }
+            if let label = priorityLabel {
+                label.text = "Priority: \(String(detail.priorityNumber))"
+            }
+            if let label = detailDescriptionLabel {
+                label.text = "Description: \(detail.todoDescription ?? "")"
+            }
+        }
     }
 
     override func viewDidLoad() {

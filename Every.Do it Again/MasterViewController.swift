@@ -44,7 +44,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         let newToDo = ToDo(context: context)
              
         // If appropriate, configure the new managed object.
-        newToDo.timestamp = Date()
+        //newToDo.timestamp = Date()
 
         // Save the context.
         do {
@@ -84,8 +84,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let event = fetchedResultsController.object(at: indexPath)
-        configureCell(cell, withEvent: event)
+        let toDo = fetchedResultsController.object(at: indexPath)
+        
+        configureCell(cell, withEvent: toDo)
+        
         return cell
     }
 
@@ -110,8 +112,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }
 
-    func configureCell(_ cell: UITableViewCell, withEvent event: ToDo) {
-        //cell.textLabel!.text = event.timestamp!.description
+    func configureCell(_ cell: UITableViewCell, withEvent toDo: ToDo) {
+        cell.textLabel!.text = toDo.title
+        cell.detailTextLabel!.text = "\(toDo.priorityNumber) \(toDo.todoDescription ?? "null")"
     }
 
     // MARK: - Fetched results controller
@@ -127,7 +130,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         fetchRequest.fetchBatchSize = 20
         
         // Edit the sort key as appropriate.
-        let sortDescriptor = NSSortDescriptor(key: "timestamp", ascending: false)
+        let sortDescriptor = NSSortDescriptor(key: "priorityNumber", ascending: false)
         
         fetchRequest.sortDescriptors = [sortDescriptor]
         
